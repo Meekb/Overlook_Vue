@@ -98,6 +98,7 @@ export default {
 .content-container {
   /* display: flex; */
   width: 70%;
-  height: 77vh;
+  /* vh here for desktop skeleton */
+  height: 81vh;
 }
 </style>

@@ -4,11 +4,11 @@
       Welcome back, {{ user.name.split(' ')[0] }}! Time to book your next stay:
     </h3>
     <div class="date-room-type">
-      <input v-model="checkinDate" type="date" class="calendar" />
+      <input v-model="checkinDate" type="date" class="calendar" required/>
       <div class="dropdown-container">
         <label class="select-text">
          Select Room Type:
-          <select v-model="roomType" class="dropdown">
+          <select v-model="roomType" class="dropdown" required>
             <option name="default none"></option>
             <option name="Residential Suite">Residential Suite</option>
             <option name="Suite">Suite</option>
@@ -19,8 +19,9 @@
       </div>
     </div>
     <div class="reservation info">
-      <p v-if="checkinDate">Check-in: {{  }}</p>
+      <p v-if="checkinDate">Check-in: {{ `${checkinDate.split('-')[1]}/${checkinDate.split('-')[2]}/${checkinDate.split('-')[0]}`}}</p>
       <p v-if="roomType">Room Type: {{ roomType }}</p>
+      <button v-if="roomType" class="check-btn">Check Availability</button>
     </div>
   </div>
 </template>
@@ -49,6 +50,9 @@ export default {
 </script>
 
 <style>
+p {
+  font-size: 18px;
+}
 .user-welcome {
   text-align: left;
 }
@@ -70,5 +74,9 @@ export default {
 }
 .dropdown {
   font-size: 18px;
+}
+.check-btn {
+  font-size: 18px;
+  border-radius: 1rem;
 }
 </style>
