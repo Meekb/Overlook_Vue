@@ -1,6 +1,6 @@
 <template>
   <div :id="id" class="card-container">
-    <h3>{{ date }}</h3>
+    <h3>{{ this.formatDate() }}</h3>
     <p>{{ roomType }} #{{ roomNumber }}</p>
     <p>{{ numBeds }} {{ bedSize }}'s</p>
     <p v-if="bidet">This room has a bidet!</p>
@@ -11,6 +11,16 @@
 <script>
 export default {
   props: ['date', 'id', 'roomNumber', 'roomType', 'bedSize', 'bidet', 'numBeds', 'total'],
+  methods: {
+    formatDate () {
+      const dateToFormat = this.date.split('/')
+      const month = dateToFormat[1]
+      const day = dateToFormat[2]
+      const year = dateToFormat[0]
+      const formattedDate = `${month}/${day}/${year}`
+      return formattedDate
+    }
+  }
 }
 </script>
 
