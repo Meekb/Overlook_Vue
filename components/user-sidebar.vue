@@ -30,5 +30,11 @@ export default {
 </script>
 
 <style>
-
+.sidebar-container {
+  width: 25%;
+  height: 82vh;
+  overflow: scroll;
+  border: 2px solid black;
+  text-align: center;
+}
 </style>

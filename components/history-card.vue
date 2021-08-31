@@ -20,8 +20,8 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 20%;
-  margin: 5px 0 5px 0;
+  width: 80%;
+  margin: 5px 0 5px 25px;
   border: 3px solid black;
 }
 </style>
