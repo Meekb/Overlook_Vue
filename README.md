@@ -1,6 +1,8 @@
 # Overlook Hotel - Currently Under Construction 🦺🛠!
 
 ## Overview
+This is a rebuild of an earlier JS project called Overlook. It's a hotel booking application which allows a user to login with a username and password, view the total amount of money spent at the hotel, view details of previous stays, and book future stays.  
+*This rebuild is currently under construction using Vue 3 with Nuxt.js. Testing will be conducted end to end using Cypress
 
 ## Instructions
 
@@ -19,6 +21,22 @@ $ npm run dev
   * Login with 'customer01' to 'customer50' with password 'overlook2021'
 
 ## Tech Stack
+<table>
+  <tr>
+    <td>JavaScript ES6</td>
+    <td>CSS</td>
+    <td>React</td>
+    <td>React Router</td>
+    <td>Cypress</td>
+  </tr>
+  <tr>
+    <td><img width="55" src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/vue.svg"/></td>
+    <td><img width="55" src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/nuxt.svg"/></td>   
+    <td><img width="55" src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/javascript.svg"/></td>
+    <td><img width="55" src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/coreos.svg"/></td>
+    <td><img width="55" src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/cypress.svg"/></td>
+  </tr>
+</table>
 
 ## Contributors
 <table>
