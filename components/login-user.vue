@@ -44,7 +44,6 @@ export default {
       this.error = false
     },
     validateLogin () {
-      // e.preventDefault()
       const setup = this.username.split('r')
       const userError1 = this.username.length < 9
       const userError2 = this.username.length > 10

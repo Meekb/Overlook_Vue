@@ -39,17 +39,17 @@ export default {
       this.userHistory = userHistory
 
       const details = this.userHistory.map(item => {
-        item.details = [];
+        item.details = item;
         const detail = this.allRooms.filter(room => {
           return room.number === item.roomNumber
         })
-        item.details.push(detail)
+        item.details = [...detail]
       })
       return details
     },
     setTotalSpent () {
       const itemTotal = this.userHistory.map(item => 
-      item.total = item.details[0][0].costPerNight)
+      item.total = item.details[0].costPerNight)
       this.user.totalSpent = (this.userHistory.reduce((acc, cur) => {
         return acc += cur.total
       }, 0))
