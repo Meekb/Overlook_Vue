@@ -2,7 +2,7 @@
   <div class="card-container">
     <h3>{{ date }}</h3>
     <p>{{ roomType }} #{{ roomNumber }}</p>
-    <p>{{ bedSize }} x{{ numBeds }}</p>
+    <p>{{ numBeds }} {{ bedSize }}'s</p>
     <p v-if="bidet">This room has a bidet!</p>
     <p>{{ total }}</p>
   </div>

@@ -6,7 +6,7 @@
       <button v-if="!historyDisplayed" @click.prevent="toggleUserHistory" class="user-history-btn">View History</button>
       <button v-if="historyDisplayed" @click.prevent="toggleUserHistory" class="user-history-btn">Hide History</button>
       <section v-if="historyDisplayed" v-for="item in this.userHistory" class="historyDisplay">
-        <history-card :date="item.date" :roomNumber="item.roomNumber" :roomType="item.roomType" :bedSize="item.bedSize" :bidet="item.bidet" :total="item.total" />
+        <history-card :date="item.date" :roomNumber="item.roomNumber" :roomType="item.roomType" :bedSize="item.bedSize" :bidet="item.bidet" :numBeds="item.numBeds" :total="item.total" />
       </section>
     </aside>
   </section>
