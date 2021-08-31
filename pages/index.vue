@@ -1,15 +1,25 @@
 <template>
-  <div class="main-container">
-    <hotel-header />
-    <login-user @is-validated="asyncData" />
-    <user-sidebar v-if="isValidated" :name="user.name" :userHistory="userHistory" :userTotal="this.user.totalSpent" />
+  <div class="app-container">
+    <hotel-header :logoutUser="this.logoutUser" :isValidated="this.isValidated"/>
+    <main class="main-container">
+      <div v-if="!isValidated" class="logged-out-main">
+        <login-user @is-validated="asyncData" />
+      </div>
+      <div v-if="isValidated" class="logged-in-main">
+        <user-sidebar :name="user.name" :userHistory="userHistory" :userTotal="this.user.totalSpent" />
+        <div class="content-container">
+        <booking-form :user="this.user" />
+        </div>
+      </div>
+    </main>
   </div>
 </template>
 
 <script>
+import BookingForm from '~/components/booking-form.vue'
 import userSidebar from '~/components/user-sidebar.vue'
 export default {
-  components: { userSidebar },
+  components: { userSidebar, BookingForm },
   data () {
     return {
       user: undefined,
@@ -65,10 +75,29 @@ export default {
       this.user.totalSpent = this.user.totalSpent.toFixed(2)
       return this.user.totalSpent
     },
+    logoutUser () {
+      this.isValidated = false
+      this.user = undefined
+      this.userHistory = undefined
+      this.allBookings = undefined
+      this.allRooms = undefined
+    },
   }
 }
 </script>
 
 <style>
-
+/* * {
+  border: 2px solid green;
+} */
+.logged-in-main {
+  display: flex;
+  justify-content: space-between;
+  /* align-items: center; */
+}
+.content-container {
+  /* display: flex; */
+  width: 70%;
+  height: 77vh;
+}
 </style>
