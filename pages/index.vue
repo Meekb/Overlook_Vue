@@ -96,7 +96,6 @@ export default {
   /* align-items: center; */
 }
 .content-container {
-  /* display: flex; */
   width: 70%;
   /* vh here for desktop skeleton */
   height: 81vh;
