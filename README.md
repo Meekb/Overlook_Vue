@@ -16,6 +16,7 @@ $ npm run dev
 ```
 
 ## Project Details
+  * Login with 'customer01' to 'customer50' with password 'overlook2021'
 
 ## Tech Stack
 
