@@ -33,6 +33,7 @@ export default {
 
       this.setUserHistory()
       this.setTotalSpent()
+      this.setDetailsOfDetail()
     },
     setUserHistory () {
       const userHistory = this.allBookings.filter(booking => booking.userID === this.user.id)
@@ -47,13 +48,22 @@ export default {
       })
       return details
     },
+    setDetailsOfDetail () {
+      this.userHistory.map(item => {
+        item.roomType = item.details[0].roomType
+        item.bidet = item.details[0].bidet
+        item.numBeds = item.details[0].numBeds
+        item.bedSize = item.details[0].bedSize
+      })
+    },
     setTotalSpent () {
       const itemTotal = this.userHistory.map(item => 
       item.total = item.details[0].costPerNight)
       this.user.totalSpent = (this.userHistory.reduce((acc, cur) => {
         return acc += cur.total
       }, 0))
-      console.log(this.user)
+      this.user.totalSpent = this.user.totalSpent.toFixed(2)
+      return this.user.totalSpent
     },
   }
 }

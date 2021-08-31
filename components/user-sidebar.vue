@@ -2,10 +2,11 @@
   <section class="sidebar-container">
     <aside class="user-sidebar">
       <h3>{{ name }}'s Overlook History</h3>
-      <button @click.prevent="displayUserHistory" class="user-history-btn">View History</button>
-      <section v-if="historyDisplayed" :v-for="userHistory in this.userHistory" class="historyDisplay">
-        <h4>Total spent at Overlook: ${{ userTotal }}</h4>
-        <history-card :date="userHistory.date" />
+      <h4 v-if="historyDisplayed">Total spent at Overlook: ${{ userTotal }}</h4>
+      <button v-if="!historyDisplayed" @click.prevent="toggleUserHistory" class="user-history-btn">View History</button>
+      <button v-if="historyDisplayed" @click.prevent="toggleUserHistory" class="user-history-btn">Hide History</button>
+      <section v-if="historyDisplayed" v-for="item in this.userHistory" class="historyDisplay">
+        <history-card :date="item.date" :roomNumber="item.roomNumber" :roomType="item.roomType" :bedSize="item.bedSize" :bidet="item.bidet" :total="item.total" />
       </section>
     </aside>
   </section>
@@ -20,10 +21,9 @@ export default {
     }
   },
   methods: {
-    displayUserHistory (e) {
+    toggleUserHistory (e) {
       e.preventDefault()
-      this.historyDisplayed = true;
-      console.log(this.userHistory)
+      this.historyDisplayed = !this.historyDisplayed;
     }
   },
 }
