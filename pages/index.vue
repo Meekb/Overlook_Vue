@@ -2,7 +2,7 @@
   <div class="main-container">
     <hotel-header />
     <login-user @is-validated="asyncData" />
-    <user-sidebar v-if="isValidated" :name="user.name" />
+    <user-sidebar v-if="isValidated" :name="user.name" :userHistory="userHistory" :userTotal="this.user.totalSpent" />
   </div>
 </template>
 
@@ -32,6 +32,7 @@ export default {
       this.allRooms = rooms.rooms
 
       this.setUserHistory()
+      this.setTotalSpent()
     },
     setUserHistory () {
       const userHistory = this.allBookings.filter(booking => booking.userID === this.user.id)
@@ -45,6 +46,14 @@ export default {
         item.details.push(detail)
       })
       return details
+    },
+    setTotalSpent () {
+      const itemTotal = this.userHistory.map(item => 
+      item.total = item.details[0][0].costPerNight)
+      this.user.totalSpent = (this.userHistory.reduce((acc, cur) => {
+        return acc += cur.total
+      }, 0))
+      console.log(this.user)
     },
   }
 }
