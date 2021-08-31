@@ -4,7 +4,7 @@
     <p>{{ roomType }} #{{ roomNumber }}</p>
     <p>{{ numBeds }} {{ bedSize }}'s</p>
     <p v-if="bidet">This room has a bidet!</p>
-    <p>{{ total }}</p>
+    <p>Room Total: ${{ total }}</p>
   </div>
 </template>
 

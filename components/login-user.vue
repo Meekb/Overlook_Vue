@@ -23,7 +23,7 @@
         required/>
     </div>
     <button @click="validateLogin" class="login-btn">Login</button>
-    <error-comp v-if="this.error"/>
+    <error-login v-if="this.error"/>
   </div>
 </template>
 
@@ -53,7 +53,7 @@ export default {
       const passError1 = (this.password !== 'overlook2021')
       if (userError1 || userError2 || userError3 || userError4 || userError5 || passError1) {
         this.error = true
-        setTimeout(this.errorTimeout, 4000)
+        setTimeout(this.errorTimeout, 3000)
         return
       } 
       this.validated = true;
