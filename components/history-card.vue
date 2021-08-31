@@ -1,5 +1,5 @@
 <template>
-  <div class="card-container">
+  <div :id="id" class="card-container">
     <h3>{{ date }}</h3>
     <p>{{ roomType }} #{{ roomNumber }}</p>
     <p>{{ numBeds }} {{ bedSize }}'s</p>
@@ -10,7 +10,7 @@
 
 <script>
 export default {
-  props: ['date', 'roomNumber', 'roomType', 'bedSize', 'bidet', 'numBeds', 'total'],
+  props: ['date', 'id', 'roomNumber', 'roomType', 'bedSize', 'bidet', 'numBeds', 'total'],
 }
 </script>
 
