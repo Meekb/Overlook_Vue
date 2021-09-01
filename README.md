@@ -4,7 +4,8 @@
 This is a rebuild of an earlier JS project called Overlook. It's a hotel booking application which allows a user to login with a username and password, view the total amount of money spent at the hotel, view details of previous stays, and book future stays.  
 
 *This rebuild is currently under construction using Vue 3 with Nuxt.js. Testing will be conducted end to end using Cypress*  
-*[The original spec for Overlook can be found here](https://frontend.turing.edu/projects/overlook.html)*
+*[The original spec for Overlook can be found here](https://frontend.turing.edu/projects/overlook.html)*  
+*[Instructions for cloning and running the Overlook-api can be found here](https://github.com/turingschool-examples/overlook-api)*
 
 ## Instructions
 
