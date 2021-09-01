@@ -35,6 +35,9 @@ export default {
       roomType: undefined
     }
   },
+  calculated: {
+
+  },
   methods: {
     formatCheckin () {
       const dateToFormat = this.checkinDate.split('-')
@@ -44,13 +47,11 @@ export default {
       const formattedCheckin = `${month}/${day}/${year}`
       return formattedCheckin
     },
-    formatCheckinState () {
-      return this.checkin.split('-').join('/')
-    },
-    checkAvailability (checkin) {
-      this.formatCheckinState()
+    checkAvailability () {
+      this.checkinDate = this.formatCheckin()
       // where ive left off 9/1
-      // const bookedRooms = this.bookings.filter(bk => bk.date === checkin)
+      const bookedRooms = this.bookings.filter(bk => bk.date === this.checkinDate)
+      console.log(bookedRooms)
     }
   },
 }
