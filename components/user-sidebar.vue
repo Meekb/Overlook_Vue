@@ -1,7 +1,7 @@
 <template>
   <section class="sidebar-container">
     <aside class="user-sidebar">
-      <h3>Your History at Overlook</h3>
+      <p class="your-history">Your History at Overlook</p>
       <h4 v-if="historyDisplayed">Total spent at Overlook: ${{ userTotal }}</h4>
       <button v-if="!historyDisplayed" @click.prevent="toggleUserHistory" class="user-history-btn">View History</button>
       <button v-if="historyDisplayed" @click.prevent="toggleUserHistory" class="user-history-btn">Hide History</button>
@@ -17,7 +17,7 @@ export default {
   props: [ 'name', 'userHistory', 'userTotal' ],
   data () {
     return {
-      historyDisplayed: false,
+      historyDisplayed: true,
     }
   },
   methods: {
@@ -38,8 +38,12 @@ export default {
   border: 2px solid black;
   text-align: center;
 }
+.your-history {
+  font-size: 25px;
+}
 .user-history-btn {
   font-size: 18px;
   border-radius: 1rem;
+  margin-top: 25px;
 }
 </style>

@@ -19,31 +19,33 @@
       </div>
     </div>
     <div class="reservation info">
-      <p v-if="checkinDate">Check-in: {{ `${checkinDate.split('-')[1]}/${checkinDate.split('-')[2]}/${checkinDate.split('-')[0]}`}}</p>
+      <p v-if="checkinDate">Check-in: {{ formatCheckin() }}</p>
       <p v-if="roomType">Room Type: {{ roomType }}</p>
-      <button v-if="roomType" class="check-btn">Check Availability</button>
+      <button v-if="roomType" @click="checkAvailability" class="check-btn">Check Availability</button>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  props: ['user'],
+  props: ['user', 'bookings'],
   data () {
     return {
       checkinDate: '',
       roomType: undefined
     }
   },
-  method: {
+  methods: {
     formatCheckin () {
-      this.checkinDate.split('-')
+      const dateToFormat = this.checkinDate.split('-')
       const month = dateToFormat[1]
       const day = dateToFormat[2]
       const year = dateToFormat[0]
       const formattedCheckin = `${month}/${day}/${year}`
-      this.checkinDate = formattedCheckin
-      return this.checkinDate
+      return formattedCheckin
+    },
+    checkAvailability () {
+      console.log(this.bookings[0])
     }
   },
 }

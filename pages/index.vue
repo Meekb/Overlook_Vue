@@ -8,7 +8,7 @@
       <div v-if="isValidated" class="logged-in-main">
         <user-sidebar :name="user.name" :userHistory="userHistory" :userTotal="this.user.totalSpent" />
         <div class="content-container">
-        <booking-form :user="this.user" />
+        <booking-form :user="this.user" :bookings="this.allBookings" />
         </div>
       </div>
     </main>
@@ -44,6 +44,7 @@ export default {
       this.setUserHistory()
       this.setTotalSpent()
       this.setDetailsOfDetail()
+      this.setBookingDates()
     },
     setUserHistory () {
       const userHistory = this.allBookings.filter(booking => booking.userID === this.user.id)
@@ -74,6 +75,21 @@ export default {
       }, 0))
       this.user.totalSpent = this.user.totalSpent.toFixed(2)
       return this.user.totalSpent
+    },
+    formatDate (date) {
+      date = date.split('/')
+      const month = date[1]
+      const day = date[2]
+      const year = date[0]
+      const formattedDate = `${month}/${day}/${year}`
+      return formattedDate
+    },
+    setBookingDates () {
+      const formattedBookings = this.allBookings.map(booking => {
+        const bookingDate = booking.date
+        return booking.date = this.formatDate(bookingDate)
+      })
+      return formattedBookings
     },
     logoutUser () {
       this.isValidated = false
