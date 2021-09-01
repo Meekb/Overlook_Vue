@@ -45,7 +45,8 @@ export default {
       return formattedCheckin
     },
     checkAvailability () {
-      console.log(this.bookings[0])
+      // console.log(this.bookings.filter(bk => bk.roomType == this.roomType))
+      // console.log(availRooms)
     }
   },
 }

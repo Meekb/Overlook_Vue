@@ -45,6 +45,7 @@ export default {
       this.setTotalSpent()
       this.setDetailsOfDetail()
       this.setBookingDates()
+      this.setBookingRooms()
     },
     setUserHistory () {
       const userHistory = this.allBookings.filter(booking => booking.userID === this.user.id)
@@ -90,6 +91,13 @@ export default {
         return booking.date = this.formatDate(bookingDate)
       })
       return formattedBookings
+    },
+    setBookingRooms () {
+      const formattedRoomTypes = this.allBookings.map(booking => {
+        const match = this.allRooms.find(rm => rm.number === booking.roomNumber)
+        return booking.roomType = match.roomType
+      })
+      return formattedRoomTypes
     },
     logoutUser () {
       this.isValidated = false
