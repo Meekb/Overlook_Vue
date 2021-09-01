@@ -3,7 +3,7 @@
     <h3>{{ date }}</h3>
     <p>{{ roomType }} #{{ roomNumber }}</p>
     <p>{{ this.displayNumBeds() }}</p>
-    <p v-if="bidet">This room has a bidet!</p>
+    <p v-if="bidet">This room had a bidet!</p>
     <p>Room Total: ${{ total }}</p>
   </div>
 </template>

@@ -44,8 +44,13 @@ export default {
       const formattedCheckin = `${month}/${day}/${year}`
       return formattedCheckin
     },
-    checkAvailability () {
-      console.log(this.bookings)
+    formatCheckinState () {
+      return this.checkin.split('-').join('/')
+    },
+    checkAvailability (checkin) {
+      this.formatCheckinState()
+      // where ive left off 9/1
+      // const bookedRooms = this.bookings.filter(bk => bk.date === checkin)
     }
   },
 }
