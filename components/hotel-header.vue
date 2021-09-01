@@ -17,6 +17,9 @@ export default {
 </script>
 
 <style>
+.header-container {
+  background-color: bisque;
+}
 .overlook {
   text-align: center;
 }

@@ -45,8 +45,7 @@ export default {
       return formattedCheckin
     },
     checkAvailability () {
-      // console.log(this.bookings.filter(bk => bk.roomType == this.roomType))
-      // console.log(availRooms)
+      console.log(this.bookings)
     }
   },
 }
@@ -55,6 +54,9 @@ export default {
 <style>
 p {
   font-size: 18px;
+}
+.booking-container {
+  background-color: bisque;
 }
 .user-welcome {
   text-align: left;

@@ -1,8 +1,8 @@
 <template>
   <div :id="id" class="card-container">
-    <h3>{{ this.formatDate() }}</h3>
+    <h3>{{ date }}</h3>
     <p>{{ roomType }} #{{ roomNumber }}</p>
-    <p>{{ numBeds }} {{ bedSize }}'s</p>
+    <p>{{ this.displayNumBeds() }}</p>
     <p v-if="bidet">This room has a bidet!</p>
     <p>Room Total: ${{ total }}</p>
   </div>
@@ -12,13 +12,11 @@
 export default {
   props: ['date', 'id', 'roomNumber', 'roomType', 'bedSize', 'bidet', 'numBeds', 'total'],
   methods: {
-    formatDate () {
-      const dateToFormat = this.date.split('/')
-      const month = dateToFormat[1]
-      const day = dateToFormat[2]
-      const year = dateToFormat[0]
-      const formattedDate = `${month}/${day}/${year}`
-      return formattedDate
+    displayNumBeds () {
+      if (this.numBeds > 1) {
+        return `${this.numBeds} ${this.bedSize}'s`
+      }
+      return `${this.numBeds} ${this.bedSize}` 
     }
   }
 }
@@ -34,5 +32,7 @@ export default {
   width: 80%;
   margin: 5px 0 5px 25px;
   border: 3px solid black;
+  background-color: plum;
+  font-weight: bold;
 }
 </style>

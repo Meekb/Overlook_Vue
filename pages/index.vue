@@ -114,6 +114,9 @@ export default {
 /* * {
   border: 2px solid green;
 } */
+.app-container {
+  background-color: bisque;
+}
 .logged-in-main {
   display: flex;
   justify-content: space-between;

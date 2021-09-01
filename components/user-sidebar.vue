@@ -37,6 +37,7 @@ export default {
   overflow: scroll;
   border: 2px solid black;
   text-align: center;
+  background-color: bisque;
 }
 .your-history {
   font-size: 25px;
