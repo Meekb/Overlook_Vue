@@ -49,9 +49,7 @@ export default {
     },
     checkAvailability () {
       this.checkinDate = this.formatCheckin()
-      // where ive left off 9/1
       const bookedRooms = this.bookings.filter(bk => bk.date === this.checkinDate)
-      console.log(bookedRooms)
     }
   },
 }
