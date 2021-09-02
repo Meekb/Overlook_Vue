@@ -1,4 +1,4 @@
-# Overlook Hotel - Currently Under Construction 🦺🛠!
+# Overlook Hotel - Currently Under Construction 🦺🛠
 
 ## Overview
 This is a rebuild of an earlier JS project called Overlook. It's a hotel booking application which allows a user to login with a username and password, view the total amount of money spent at the hotel, view details of previous stays, and book future stays.  
