@@ -36,6 +36,7 @@
 <script>
 import BookingForm from '~/components/booking-form.vue'
 import userSidebar from '~/components/user-sidebar.vue'
+
 export default {
   components: { userSidebar, BookingForm },
   data () {

@@ -4,11 +4,20 @@
       Welcome back, {{ user.name.split(' ')[0] }}! Time to book your next stay:
     </h3>
     <div class="date-room-type">
-      <input v-model="checkinDate" type="date" class="calendar" required/>
+      <input 
+        v-model="checkinDate" 
+        type="date" 
+        class="calendar" 
+        required
+      />
       <div class="dropdown-container">
         <label class="select-text">
          Select Room Type:
-          <select v-model="roomType" class="dropdown" required>
+          <select 
+            v-model="roomType" 
+            class="dropdown" 
+            required
+          >
             <option name="default none"></option>
             <option name="Residential Suite">Residential Suite</option>
             <option name="Suite">Suite</option>
@@ -21,7 +30,13 @@
     <div class="reservation info">
       <p v-if="checkinDate">Check-in: {{ formatCheckin() }}</p>
       <p v-if="roomType">Room Type: {{ roomType }}</p>
-      <button v-if="roomType" @click="checkAvailability" class="check-btn">Check Availability</button>
+      <button 
+        v-if="roomType" 
+        @click="checkAvailability" 
+        class="check-btn"
+      >
+      Check Availability
+      </button>
     </div>
   </div>
 </template>

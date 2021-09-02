@@ -43,6 +43,7 @@
 </template>
 
 <script>
+
 export default {
   props: [ 'name', 'userHistory', 'userTotal' ],
   data () {
