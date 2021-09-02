@@ -10,6 +10,7 @@ This is a rebuild of an earlier vanilla JS project called Overlook. It's a hotel
 
 ```bash
 # clone down this repo
+$ git clone git@github.com:Meekb/Overlook_Vue.git 
 $ cd into project
 
 # install dependencies
