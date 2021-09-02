@@ -6,9 +6,9 @@
         <login-user @is-validated="asyncData" />
       </div>
       <div v-if="isValidated" class="logged-in-main">
-        <user-sidebar :name="user.name" :userHistory="userHistory" :userTotal="this.user.totalSpent" />
+        <user-sidebar :name="user.name" :userHistory="userHistory" :rooms="this.allRooms" :userTotal="this.user.totalSpent" />
         <div class="content-container">
-        <booking-form :user="this.user" :bookings="this.allBookings" />
+        <booking-form :user="this.user" :bookings="this.allBookings" :rooms="this.allRooms" />
         </div>
       </div>
     </main>
@@ -41,11 +41,12 @@ export default {
       const rooms = await this.$axios.$get('http://localhost:3001/api/v1/rooms')
       this.allRooms = rooms.rooms
 
+      this.setRoomTypes()
+      this.setBookingDates()
+      this.setBookingRooms()
       this.setUserHistory()
       this.setTotalSpent()
       this.setDetailsOfDetail()
-      this.setBookingDates()
-      this.setBookingRooms()
     },
     setUserHistory () {
       const userHistory = this.allBookings.filter(booking => booking.userID === this.user.id)
@@ -69,13 +70,30 @@ export default {
       })
     },
     setTotalSpent () {
-      const itemTotal = this.userHistory.map(item => 
+      this.userHistory.map(item => 
       item.total = item.details[0].costPerNight)
       this.user.totalSpent = (this.userHistory.reduce((acc, cur) => {
         return acc += cur.total
       }, 0))
       this.user.totalSpent = this.user.totalSpent.toFixed(2)
       return this.user.totalSpent
+    },
+    setRoomTypes () {
+      const formattedRooms = this.allRooms.map(rm => {
+        if (rm.roomType === 'residential suite') {
+          rm.roomType = 'Residential Suite'
+        }
+        if (rm.roomType === 'junior suite') {
+          rm.roomType = 'Junior Suite'
+        }
+        if (rm.roomType === 'single room') {
+          rm.roomType = 'Single Room'
+        }
+        if (rm.roomType === 'suite') {
+          rm.roomType = 'Suite'
+        }
+      })
+      return formattedRooms
     },
     formatDate (date) {
       date = date.split('/')

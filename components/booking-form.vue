@@ -28,15 +28,12 @@
 
 <script>
 export default {
-  props: ['user', 'bookings'],
+  props: ['user', 'bookings', 'rooms'],
   data () {
     return {
       checkinDate: '',
       roomType: undefined
     }
-  },
-  calculated: {
-
   },
   methods: {
     formatCheckin () {
@@ -50,6 +47,8 @@ export default {
     checkAvailability () {
       this.checkinDate = this.formatCheckin()
       const bookedRooms = this.bookings.filter(bk => bk.date === this.checkinDate)
+      const roomsToDisplay = this.rooms.filter(rm => !bookedRooms.includes(rm))
+      return roomsToDisplay.filter(rm => console.log(rm))
     }
   },
 }
