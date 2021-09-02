@@ -28,12 +28,14 @@ $ npm run dev
     <td>Vue 3</td>
     <td>Nuxt.js</td>
     <td>JavaScript ES6</td>
+    <td>CSS</td>
     <td>Cypress</td>
   </tr>
   <tr>
     <td><img width="55" src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/vue.svg"/></td>
     <td><img width="55" src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/nuxt.svg"/></td>   
     <td><img width="55" src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/javascript.svg"/></td>
+    <td><img width="55" src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/css-3.svg"/></td>
     <td><img width="55" src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/cypress.svg"/></td>
   </tr>
 </table>
