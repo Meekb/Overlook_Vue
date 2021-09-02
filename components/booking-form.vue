@@ -38,16 +38,26 @@
       Check Availability
       </button>
     </div>
+    <search-results 
+      v-if="this.availRooms.length > 0" 
+      :queryMatch="this.queryMatch" 
+    />
+    <p v-if="searching && !this.queryMatch.length">Ah Shit! We don't have any rooms of that type available {{ checkinDate }}. Please select another room type, or feel free to change your query date.</p>
   </div>
 </template>
 
 <script>
+import searchResults from './search-results.vue'
 export default {
+  components: { searchResults },
   props: ['user', 'bookings', 'rooms'],
   data () {
     return {
       checkinDate: '',
-      roomType: undefined
+      roomType: undefined,
+      availRooms: [],
+      queryMatch: [],
+      searching: false,
     }
   },
   methods: {
@@ -60,10 +70,22 @@ export default {
       return formattedCheckin
     },
     checkAvailability () {
+      this.searching = true
       this.checkinDate = this.formatCheckin()
       const bookedRooms = this.bookings.filter(bk => bk.date === this.checkinDate)
-      const roomsToDisplay = this.rooms.filter(rm => !bookedRooms.includes(rm))
-      return roomsToDisplay.filter(rm => console.log(rm))
+      console.log('booked rooms', bookedRooms)
+      this.rooms.map(rm => {
+        const checker = bookedRooms.find(br => br.roomNumber === rm.number)
+        if (!checker) {
+          this.availRooms.push(rm)
+        }
+      })
+      this.availRooms.forEach(rm => {
+        if (rm.roomType === this.roomType) {
+          this.queryMatch.push(rm)
+        }
+      })
+      console.log('queryMatch', this.queryMatch)
     }
   },
 }
