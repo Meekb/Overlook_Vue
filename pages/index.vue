@@ -1,14 +1,32 @@
 <template>
   <div class="app-container">
-    <hotel-header :logoutUser="this.logoutUser" :isValidated="this.isValidated"/>
+    <hotel-header 
+      :logoutUser="this.logoutUser" 
+      :isValidated="this.isValidated"
+    />
     <main class="main-container">
-      <div v-if="!isValidated" class="logged-out-main">
+      <div 
+        v-if="!isValidated" 
+        class="logged-out-main"
+      >
         <login-user @is-validated="asyncData" />
       </div>
-      <div v-if="isValidated" class="logged-in-main">
-        <user-sidebar :name="user.name" :userHistory="userHistory" :rooms="this.allRooms" :userTotal="this.user.totalSpent" />
+      <div 
+        v-if="isValidated" 
+        class="logged-in-main"
+      >
+        <user-sidebar 
+          :name="user.name" 
+          :userHistory="userHistory" 
+          :rooms="this.allRooms" 
+          :userTotal="this.user.totalSpent" 
+        />
         <div class="content-container">
-        <booking-form :user="this.user" :bookings="this.allBookings" :rooms="this.allRooms" />
+        <booking-form 
+          :user="this.user" 
+          :bookings="this.allBookings" 
+          :rooms="this.allRooms" 
+        />
         </div>
       </div>
     </main>
