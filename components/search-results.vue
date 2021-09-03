@@ -24,7 +24,9 @@ export default {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 25px;
-  height: 30vh;
+  height: 28vh;
   overflow: scroll;
+  background-color: black;
+  padding: 25px;
 }
 </style>

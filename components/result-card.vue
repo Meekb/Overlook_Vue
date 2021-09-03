@@ -27,5 +27,6 @@ export default {
   padding: 10px;
   border: 2px solid black;
   width: 75%;
+  background-color: plum;
 }
 </style>
