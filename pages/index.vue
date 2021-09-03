@@ -163,5 +163,6 @@ export default {
   width: 70%;
   /* vh here for desktop skeleton */
   height: 81vh;
+  overflow: scroll;
 }
 </style>
