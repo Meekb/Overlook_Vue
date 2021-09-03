@@ -1,7 +1,7 @@
 <template>
    <div class="result">
       <h3>{{ this.type }} #{{ this.number }}</h3>
-      <p>Room Number</p>
+      <p>More Room Info</p>
       <p>ETC...</p>
       <button @click="consoleTheThing">ConsoleLog</button>
     </div>
@@ -20,6 +20,12 @@ export default {
 
 <style>
 .result {
-  border: 2px soild black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  border: 2px solid black;
+  width: 75%;
 }
 </style>

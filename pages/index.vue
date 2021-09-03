@@ -149,7 +149,7 @@ export default {
 
 <style>
 /* * {
-  border: 2px solid green;
+  border: 1px solid green;
 } */
 .app-container {
   background-color: bisque;
@@ -161,8 +161,5 @@ export default {
 }
 .content-container {
   width: 70%;
-  /* vh here for desktop skeleton */
-  height: 81vh;
-  overflow: scroll;
 }
 </style>

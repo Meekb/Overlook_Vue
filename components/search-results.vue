@@ -1,9 +1,6 @@
 <template>
   <div class="results-container">
-    <div>
-      <h3>Here are our available rooms. Select one to continue:</h3>
-    </div>
-    <div v-for="item in this.queryInfo">
+    <div v-for="item in this.queryInfo" class="cards-container">
       <result-card :type="item.roomType" :number="item.number" />
     </div>
   </div>
@@ -25,7 +22,9 @@ export default {
 <style>
 .results-container {
   display: grid;
-  grid-template-columns: auto;
-  /* grid-gap: 25px; */
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 25px;
+  height: 30vh;
+  overflow: scroll;
 }
 </style>
