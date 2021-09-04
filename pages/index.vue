@@ -143,11 +143,13 @@ export default {
       return formattedRoomTypes
     },
     logoutUser () {
-      this.isValidated = false
-      this.user = undefined
-      this.userHistory = undefined
       this.allBookings = undefined
       this.allRooms = undefined
+      this.availability = undefined
+      this.isValidated = false
+      this.search = false
+      this.user = undefined
+      this.userHistory = undefined
     },
     displayAvailRooms(payload) {
       this.availability = payload.availability
