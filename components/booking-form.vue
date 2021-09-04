@@ -38,21 +38,11 @@
       Check Availability
       </button>
     </div>
-    <div>
-      <h3 v-if="queryMatch.length > 0">Here are our available rooms. Select one to continue:</h3>
-      <p v-if="searching && !this.queryMatch.length">Ah Shit! We don't have any rooms of that type available {{ checkinDate }}. Please select another room type, or feel free to change your query date.</p>
-      <search-results 
-        v-if="this.availRooms.length > 0" 
-        :queryMatch="this.queryMatch" 
-      />
-    </div>
   </div>
 </template>
 
 <script>
-import searchResults from './search-results.vue'
 export default {
-  components: { searchResults },
   props: ['user', 'bookings', 'rooms'],
   data () {
     return {
@@ -87,7 +77,9 @@ export default {
           this.queryMatch.push(rm)
         }
       })
-    }
+      const availability = this.availRooms
+      this.$emit('rooms-avail', {availability, search: this.searching})
+    },
   },
 }
 </script>

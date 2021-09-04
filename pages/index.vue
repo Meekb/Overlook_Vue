@@ -25,8 +25,10 @@
         <booking-form 
           :user="this.user" 
           :bookings="this.allBookings" 
-          :rooms="this.allRooms" 
+          :rooms="this.allRooms"
+          @rooms-avail="displayAvailRooms" 
         />
+        <search-results v-if="this.search" :availability="this.availability" />
         </div>
       </div>
     </main>
@@ -35,10 +37,11 @@
 
 <script>
 import BookingForm from '~/components/booking-form.vue'
+import SearchResults from '~/components/search-results.vue'
 import userSidebar from '~/components/user-sidebar.vue'
 
 export default {
-  components: { userSidebar, BookingForm },
+  components: { userSidebar, BookingForm, SearchResults },
   data () {
     return {
       user: undefined,
@@ -46,6 +49,8 @@ export default {
       isValidated: false,
       allBookings: undefined,
       allRooms: undefined,
+      availability: undefined,
+      search: false,
     }
   },
   methods: {
@@ -144,6 +149,10 @@ export default {
       this.allBookings = undefined
       this.allRooms = undefined
     },
+    displayAvailRooms(payload) {
+      this.availability = payload.availability
+      this.search = payload.search
+    }
   }
 }
 </script>

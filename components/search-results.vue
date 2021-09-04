@@ -1,7 +1,7 @@
 <template>
   <div class="results-container">
     <div 
-      v-for="(item, i) in this.queryInfo" 
+      v-for="(item, i) in this.availability" 
       class="cards-container"
     >
       <result-card
@@ -21,7 +21,7 @@
 import ResultCard from './result-card.vue'
 export default {
   components: { ResultCard },
-  props: [ 'queryMatch' ],
+  props: [ 'availability' ],
   data() {
     return {
       queryInfo: this.queryMatch,
@@ -38,9 +38,10 @@ export default {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 25px;
-  height: 28vh;
+  height: 27.5vh;
   overflow: scroll;
   background-color: black;
   padding: 25px;
+  margin-right: 50px;
 }
 </style>

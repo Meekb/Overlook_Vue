@@ -13,9 +13,7 @@
 export default {
   props: [ 'bedSize', 'bidet', 'cost', 'number', 'numBeds', 'type' ],
   computed: {
-    // bedFormat: function() {
-
-    // } 
+ 
   },
 }
 </script>
