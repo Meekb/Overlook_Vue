@@ -1,10 +1,11 @@
 <template>
   <div class="results-container">
     <div 
-      v-for="item in this.queryInfo" 
+      v-for="(item, i) in this.queryInfo" 
       class="cards-container"
     >
-      <result-card 
+      <result-card
+        :key="i" 
         :type="item.roomType" 
         :number="item.number" 
         :bidet="item.bidet" 
@@ -26,6 +27,9 @@ export default {
       queryInfo: this.queryMatch,
     }
   },
+  methods: {
+
+  }
 }
 </script>
 

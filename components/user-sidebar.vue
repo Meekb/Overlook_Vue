@@ -62,9 +62,9 @@ export default {
 
 <style>
 .sidebar-container {
-  width: 25%;
   /* vh here for desktop skeleton */
-  height: 77vh;
+  width: 25%;
+  height: 76vh;
   overflow: scroll;
   border: 2px solid black;
   text-align: center;

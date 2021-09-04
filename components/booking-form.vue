@@ -97,7 +97,7 @@ p {
   font-size: 18px;
 }
 .booking-container {
-  height: 24vh;
+  height: 40vh;
   background-color: bisque;
 }
 .user-welcome {

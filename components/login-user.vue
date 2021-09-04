@@ -74,7 +74,7 @@ label {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 85px;
+  padding: 0;
 }
 .please-login {
   font-size: 18px;

@@ -111,6 +111,7 @@ export default {
         if (rm.roomType === 'suite') {
           rm.roomType = 'Suite'
         }
+        // rm.costPerNight = rm.costPerNight.toFixed(2)  
       })
       return formattedRooms
     },
@@ -153,13 +154,18 @@ export default {
 } */
 .app-container {
   background-color: bisque;
+  height: 95vh;
+  margin: 0;
+  padding: 0;
 }
 .logged-in-main {
   display: flex;
   justify-content: space-between;
-  /* align-items: center; */
+  height: 76.5vh;
+  background-color: bisque;
 }
 .content-container {
   width: 70%;
+  background-color: bisque;
 }
 </style>
