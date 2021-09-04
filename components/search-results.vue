@@ -1,7 +1,17 @@
 <template>
   <div class="results-container">
-    <div v-for="item in this.queryInfo" class="cards-container">
-      <result-card :type="item.roomType" :number="item.number" />
+    <div 
+      v-for="item in this.queryInfo" 
+      class="cards-container"
+    >
+      <result-card 
+        :type="item.roomType" 
+        :number="item.number" 
+        :bidet="item.bidet" 
+        :cost="item.costPerNight" 
+        :numBeds="item.numBeds" 
+        :bedSize="item.bedSize" 
+      />
     </div>
   </div>
 </template>

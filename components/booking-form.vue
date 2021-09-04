@@ -76,7 +76,6 @@ export default {
       this.searching = true
       this.checkinDate = this.formatCheckin()
       const bookedRooms = this.bookings.filter(bk => bk.date === this.checkinDate)
-      console.log('booked rooms', bookedRooms)
       this.rooms.map(rm => {
         const checker = bookedRooms.find(br => br.roomNumber === rm.number)
         if (!checker) {
@@ -88,7 +87,6 @@ export default {
           this.queryMatch.push(rm)
         }
       })
-      console.log('queryMatch', this.queryMatch)
     }
   },
 }
