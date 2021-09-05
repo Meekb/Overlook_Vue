@@ -28,7 +28,7 @@
       </div>
     </div>
     <div class="reservation info">
-      <p v-if="checkinDate">Check-in: {{ formatCheckin() }}</p>
+      <p v-if="checkinDate">Check-in: {{ checkinDate }}</p>
       <p v-if="roomType">Room Type: {{ roomType }}</p>
       <button 
         v-if="roomType" 
@@ -63,8 +63,8 @@ export default {
       return formattedCheckin
     },
     checkAvailability () {
-      this.availRooms = []   // reset this.availRooms to clear prev result
-      this.queryMatch = []   // reset this.availRooms to clear prev result
+      this.availRooms = []   // reset this.availRooms to clear any prev results
+      this.queryMatch = []   // reset this.queryMatch to clear any prev results
       this.searching = true
       this.checkinDate = this.formatCheckin()
       const bookedRooms = this.bookings.filter(bk => bk.date === this.checkinDate)

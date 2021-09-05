@@ -9,7 +9,9 @@
         v-if="!isValidated" 
         class="logged-out-main"
       >
-        <login-user @is-validated="asyncData" />
+        <login-user 
+          @is-validated="asyncData" 
+        />
       </div>
       <div 
         v-if="isValidated" 
@@ -28,7 +30,10 @@
           :rooms="this.allRooms"
           @rooms-avail="displayAvailRooms" 
         />
-        <search-results v-if="this.search" :availability="this.availability" />
+        <search-results 
+          v-if="this.search" 
+          :availability="this.availability" 
+        />
         </div>
       </div>
     </main>
