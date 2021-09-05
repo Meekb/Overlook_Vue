@@ -5,6 +5,9 @@
       :isValidated="this.isValidated"
     />
     <main class="main-container">
+      <div class="image-container">
+        <img v-if="!this.isValidated" src="../static/OverlookHallway.png" width="300px"/>
+      </div>
       <div 
         v-if="!isValidated" 
         class="logged-out-main"
@@ -183,5 +186,23 @@ export default {
 .content-container {
   width: 70%;
   background-color: bisque;
+}
+.image-container {
+  width:25%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin: 65px 125px 0 0;
+}
+img {
+  border-radius: 1.5rem;
+  border: 5px solid rgb(234, 166, 84);
+
+  /* box-shadow: 0 0 15px 8px white inset; */
+}
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 </style>
