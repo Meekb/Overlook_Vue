@@ -26,7 +26,7 @@ export default {
   align-items: center;
   padding: 10px;
   border: 2px solid black;
-  width: 75%;
+  width: 90%;
   background-color: plum;
 }
 .book-btn {

@@ -20,24 +20,28 @@
         v-if="isValidated" 
         class="logged-in-main"
       >
+      <div class="sidebar-container">
         <user-sidebar 
           :name="user.name" 
           :userHistory="userHistory" 
           :rooms="this.allRooms" 
           :userTotal="this.user.totalSpent" 
         />
-        <div class="content-container">
-        <booking-form 
-          :user="this.user" 
-          :bookings="this.allBookings" 
-          :rooms="this.allRooms"
-          @rooms-avail="displayAvailRooms" 
-        />
-        <search-results 
-          v-if="this.search" 
-          :availability="this.availability" 
-        />
+      </div>
+      <div class="content-container">
+        <div class="form-and-results">
+          <booking-form 
+            :user="this.user" 
+            :bookings="this.allBookings" 
+            :rooms="this.allRooms"
+            @rooms-avail="displayAvailRooms" 
+          />
+          <search-results 
+            v-if="this.search" 
+            :availability="this.availability" 
+          />
         </div>
+      </div>
       </div>
     </main>
   </div>
@@ -172,6 +176,8 @@ export default {
   border: 1px solid green;
 } */
 .app-container {
+  display: flex;
+  flex-direction: column;
   background-color: bisque;
   height: 95vh;
   margin: 0;
@@ -179,30 +185,32 @@ export default {
 }
 .logged-in-main {
   display: flex;
-  justify-content: space-between;
-  height: 76.5vh;
-  background-color: bisque;
+  justify-content: center;
+  align-items: center;
 }
-.content-container {
-  width: 70%;
-  background-color: bisque;
-}
-.image-container {
-  width:25%;
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  margin: 65px 125px 0 0;
-}
-img {
-  border-radius: 1.5rem;
-  border: 5px solid rgb(234, 166, 84);
-
-  /* box-shadow: 0 0 15px 8px white inset; */
-}
-main {
+.logged-out-main {
   display: flex;
   justify-content: center;
   align-items: center;
 }
+.main-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.form-and-results {
+  display: flex;
+  flex-direction: column;
+}
+.content-container {
+  margin-left: 125px;
+}
+.sidebar-container {
+  width: 100%;
+}
+img {
+  border-radius: 1.5rem;
+  border: 5px solid rgb(234, 166, 84);
+}
+
 </style>
