@@ -22,12 +22,12 @@
         Hide History
       </button>
       <section 
-        v-if="historyDisplayed" 
+        :v-if="historyDisplayed" 
         v-for="(item, index) in this.userHistory" 
-        class="historyDisplay"
+        :key="index" 
+        class="historyDisplay" 
       >
         <history-card 
-          :key="index" 
           :id="index" 
           :date="item.date" 
           :roomNumber="item.roomNumber" 

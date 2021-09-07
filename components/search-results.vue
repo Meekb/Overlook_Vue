@@ -2,10 +2,9 @@
   <div class="results-container">
     <div 
       v-for="(item, i) in this.availability" 
-      class="cards-container"
+      class="cards-container" :key="i" 
     >
       <result-card
-        :key="i" 
         :type="item.roomType" 
         :number="item.number" 
         :bidet="item.bidet" 
