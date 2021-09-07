@@ -211,13 +211,14 @@ export default {
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  background-color: bisque;
 }
 .form-and-results {
   display: flex;
   flex-direction: column;
 }
 .content-container {
-  margin-left: 125px;
+  margin-left: 75px;
 }
 .sidebar-container {
   width: 100%;
