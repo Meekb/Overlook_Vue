@@ -54,6 +54,20 @@ import userSidebar from '~/components/user-sidebar.vue'
 
 export default {
   components: { userSidebar, BookingForm, SearchResults },
+  head () {
+    return {
+      title: 'The Overlook Hotel',
+      meta: [
+        {name: 'overlook:homepage'}
+      ],
+      link: [
+        {        
+          rel: 'canonical',
+          href: this.$route.path
+        }
+      ],
+    }
+  },
   data () {
     return {
       user: undefined,
