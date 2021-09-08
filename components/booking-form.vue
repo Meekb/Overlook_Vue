@@ -27,8 +27,12 @@
         </label>
         <div class="reservation info">
           <br>
-          <p v-if="checkinDate">Check-in: {{ checkinDate }}</p>
-          <p v-if="roomType">Room Type: {{ roomType }}</p>
+          <p v-if="checkinDate">
+            Check-in: {{ checkinDate }}
+          </p>
+          <p v-if="roomType">
+            Room Type: {{ roomType }}
+          </p>
           <button 
             v-if="roomType" 
             @click="checkAvailability" 

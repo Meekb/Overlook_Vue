@@ -1,10 +1,20 @@
 <template>
    <div class="result">
-      <h3 class="history-card-title">{{ this.type }} #{{ this.number }}</h3>
-      <p v-if="this.numBeds < 2">{{ this.numBeds }} {{ this.bedSize }} bed</p>
-      <p v-if="this.numBeds > 1">{{ this.numBeds }} {{ this.bedSize }} beds</p>
-      <p v-if="bidet">This room has a bidet!</p>
-      <p>${{ this.cost }}</p>
+      <h3 class="history-card-title">
+        {{ this.type }} #{{ this.number }}
+      </h3>
+      <p v-if="this.numBeds < 2">
+        {{ this.numBeds }} {{ this.bedSize }} bed
+      </p>
+      <p v-if="this.numBeds > 1">
+        {{ this.numBeds }} {{ this.bedSize }} beds
+      </p>
+      <p v-if="bidet">
+        This room has a bidet!
+      </p>
+      <p>
+        ${{ this.cost }}
+      </p>
       <button class="book-btn" @click="this.formatAndSubmitBooking">
         Book Room #{{ this.number }}
       </button>
