@@ -1,11 +1,11 @@
 <template>
   <div class="header-container">
     <header class="hotel-header">
-      <div class="logout">
-        <button v-if="this.isValidated" @click="this.logoutUser" class="logout-btn">Logout</button>
-      </div>
+    <button v-if="this.isValidated" @click="this.logoutUser" class="logout-btn">Logout</button>
       <h1 class="overlook">Overlook Hotel</h1>
       <h2 class="overlook">Exclusive! Luxurious! Life-changing. . .</h2>
+      <!-- <div class="logout"> -->
+      <!-- </div> -->
     </header>
   </div>
 </template>
@@ -17,16 +17,19 @@ export default {
 </script>
 
 <style>
-.header-container {
-  background-color: bisque;
+.hotel-header {
+  background-color: #d7b56b;
+  border: 2px solid #82724a;
+  margin-bottom: 5px;
+  height: 20vh;
 }
 .overlook {
   text-align: center;
 }
 .logout-btn {
-  font-size: 22px;
+  font-size: 20px;
   border-radius: 1rem;
-  margin-top: 15px;
+  margin-top: 5px;
   margin-left: 143px;
 }
 </style>

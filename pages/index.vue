@@ -179,6 +179,7 @@ export default {
     },
     displayAvailRooms(payload) {
       this.availability = payload.availability
+      console.log(this.availability)
       this.search = payload.search
     }
   }
@@ -192,7 +193,7 @@ export default {
 .app-container {
   display: flex;
   flex-direction: column;
-  background-color: bisque;
+  background-color: #c1ac93;
   height: 98vh;
   margin: 0;
   padding: 0;
@@ -212,7 +213,8 @@ export default {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  background-color: bisque;
+  background-color: #c1ac93;
+  margin-top: 25px;
 }
 .form-and-results {
   display: flex;
@@ -229,11 +231,13 @@ export default {
   background-color: #82724a;
   border: 4px solid #eaa654;
   border-radius: 1.5rem;
+  margin-left: 25px;
 }
 img {
   border-radius: 1.5rem;
-  border: 5px solid #eaa654;
+  border: 5px solid #82724a;
   margin-left: 55px;
+  margin-top: 3 5px;
 }
 
 </style>

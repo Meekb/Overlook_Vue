@@ -80,6 +80,7 @@ export default {
         }
       })
       const availability = this.queryMatch
+      availability.map(avail => avail.checkinDate = this.checkinDate)
       return this.$emit('rooms-avail', {availability, search: this.searching})
     },
   },
@@ -92,7 +93,7 @@ p {
 }
 .booking-container {
   height: 35vh;
-  width: 151%;
+  width: 145%;
   background-color: #82724a;
   border-radius: 1.5rem;
   border: 5px solid #eaa654;

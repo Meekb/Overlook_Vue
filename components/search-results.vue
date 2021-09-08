@@ -10,7 +10,8 @@
         :bidet="item.bidet" 
         :cost="item.costPerNight" 
         :numBeds="item.numBeds" 
-        :bedSize="item.bedSize" 
+        :bedSize="item.bedSize"
+        :date="item.checkinDate" 
       />
     </div>
   </div>
@@ -41,7 +42,7 @@ export default {
   overflow: scroll;
   background-color: #82724a;
   padding: 25px;
-  width: 151%;
+  width: 145%;
   border-radius: 1.5rem;
   border: 5px solid #eaa654;
 }

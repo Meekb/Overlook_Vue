@@ -68,7 +68,7 @@ export default {
 .sidebar-image {
   border-radius: 1.5rem;
   border: 5px solid #eaa654;
-  margin-left: 0px;
+  margin-left: 0;
 }
 .your-history {
   font-size: 25px;
