@@ -32,7 +32,8 @@ export default {
   width: 80%;
   margin: 5px 0 5px 25px;
   border: 3px solid black;
-  background-color: plum;
+  background-color: #d7b56b;
+  border-radius: 1rem;
   font-weight: bold;
 }
 </style>

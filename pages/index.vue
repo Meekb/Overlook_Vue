@@ -206,6 +206,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-left: 148px;
 }
 .main-container {
   display: flex;
@@ -218,14 +219,21 @@ export default {
   flex-direction: column;
 }
 .content-container {
-  margin-left: 75px;
+  margin-left: 55px;
 }
 .sidebar-container {
-  width: 100%;
+  width: 85%;
+  height: 76vh;
+  overflow: scroll;
+  text-align: center;
+  background-color: #82724a;
+  border: 4px solid #eaa654;
+  border-radius: 1.5rem;
 }
 img {
   border-radius: 1.5rem;
-  border: 5px solid rgb(234, 166, 84);
+  border: 5px solid #eaa654;
+  margin-left: 55px;
 }
 
 </style>

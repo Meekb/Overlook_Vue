@@ -24,7 +24,7 @@ export default {
   text-align: center;
 }
 .logout-btn {
-  font-size: 18px;
+  font-size: 22px;
   border-radius: 1rem;
   margin-top: 15px;
   margin-left: 143px;

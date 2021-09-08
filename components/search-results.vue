@@ -39,8 +39,9 @@ export default {
   grid-gap: 25px;
   height: 27.5vh;
   overflow: scroll;
-  background-color: black;
+  background-color: #82724a;
   padding: 25px;
-  width: 175%;
+  width: 185%;
+  border-radius: 1rem;
 }
 </style>

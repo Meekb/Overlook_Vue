@@ -27,7 +27,8 @@ export default {
   padding: 10px;
   border: 2px solid black;
   width: 90%;
-  background-color: plum;
+  background-color: #d7b56b;
+  border-radius: 1rem;
 }
 .book-btn {
   font-size: 18px;

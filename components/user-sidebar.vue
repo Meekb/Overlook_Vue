@@ -1,5 +1,5 @@
 <template>
-  <section class="sidebar-container">
+  <section>
     <aside class="user-sidebar">
       <p class="your-history">
         Your History at Overlook
@@ -21,23 +21,24 @@
       >
         Hide History
       </button>
-      <section 
-        :v-if="historyDisplayed" 
-        v-for="(item, index) in this.userHistory" 
-        :key="index" 
-        class="historyDisplay" 
-      >
-        <history-card 
-          :id="index" 
-          :date="item.date" 
-          :roomNumber="item.roomNumber" 
-          :roomType="item.roomType" 
-          :bedSize="item.bedSize" 
-          :bidet="item.bidet" 
-          :numBeds="item.numBeds" 
-          :total="item.total" 
-        />
-      </section>
+      <div v-if="historyDisplayed">
+        <div 
+          v-for="(item, index) in this.userHistory" 
+          :key="index" 
+          class="historyDisplay"
+        >
+          <history-card 
+            :id="index" 
+            :date="item.date" 
+            :roomNumber="item.roomNumber" 
+            :roomType="item.roomType" 
+            :bedSize="item.bedSize" 
+            :bidet="item.bidet" 
+            :numBeds="item.numBeds" 
+            :total="item.total" 
+          />
+        </div>
+      </div>
     </aside>
   </section>
 </template>
@@ -61,21 +62,13 @@ export default {
 </script>
 
 <style>
-.sidebar-container {
-  /* vh here for desktop skeleton */
-  width: 25%;
-  height: 76vh;
-  overflow: scroll;
-  border: 2px solid black;
-  text-align: center;
-  background-color: bisque;
-}
 .your-history {
   font-size: 25px;
 }
 .user-history-btn {
   font-size: 18px;
   border-radius: 1rem;
-  margin-top: 25px;
+  margin-top: 10px;
+  margin-bottom: 25px;
 }
 </style>
