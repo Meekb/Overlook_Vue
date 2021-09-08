@@ -114,6 +114,14 @@ export default {
       this.setTotalSpent()
       this.setDetailsOfDetail()
     },
+    async bookRoom(payload) {
+      const newReservation = payload.newReservation
+      newReservation.userID = this.user.id
+      newReservation.date = this.searchDate
+      const confirmed = await this.$axios.$post('http://localhost:3001/api/v1/bookings', newReservation)
+      newReservation.confirmation = confirmed.newBooking.id
+      this.reservation = newReservation
+    },    
     setUserHistory () {
       const userHistory = this.allBookings.filter(booking => booking.userID === this.user.id)
       this.userHistory = userHistory
@@ -191,19 +199,11 @@ export default {
       this.search = false
       this.user = undefined
       this.userHistory = undefined
+      this.reservation = undefined
     },
     displayAvailRooms(payload) {
       this.availability = payload.availability
       this.search = payload.search
-    },
-    async bookRoom(payload) {
-      const newReservation = payload.newReservation
-      newReservation.userID = this.user.id
-      newReservation.date = this.searchDate
-      const confirmed = await this.$axios.$post('http://localhost:3001/api/v1/bookings', newReservation)
-      newReservation.confirmation = confirmed.newBooking.id
-      this.reservation = newReservation
-      console.log('this.reservation', this.reservation)
     },
     setSearchDate(payload) {
       this.searchDate = payload
