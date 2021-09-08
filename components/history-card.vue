@@ -29,8 +29,8 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 80%;
-  margin: 5px 0 5px 25px;
+  width: 275px;
+  margin: 5px 0px 5px 20px;
   border: 3px solid black;
   background-color: #d7b56b;
   border-radius: 1rem;

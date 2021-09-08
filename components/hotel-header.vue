@@ -29,7 +29,7 @@ export default {
 .logout-btn {
   font-size: 20px;
   border-radius: 1rem;
-  margin-top: 5px;
+  margin-top: 10px;
   margin-left: 143px;
 }
 </style>

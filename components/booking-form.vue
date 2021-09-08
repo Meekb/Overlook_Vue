@@ -25,18 +25,19 @@
             <option name="SingleRoom">Single Room</option>
           </select>
         </label>
+        <div class="reservation info">
+          <br>
+          <p v-if="checkinDate">Check-in: {{ checkinDate }}</p>
+          <p v-if="roomType">Room Type: {{ roomType }}</p>
+          <button 
+            v-if="roomType" 
+            @click="checkAvailability" 
+            class="check-btn"
+          >
+            Check Availability
+          </button>
+        </div>
       </div>
-    </div>
-    <div class="reservation info">
-      <p v-if="checkinDate">Check-in: {{ checkinDate }}</p>
-      <p v-if="roomType">Room Type: {{ roomType }}</p>
-      <button 
-        v-if="roomType" 
-        @click="checkAvailability" 
-        class="check-btn"
-      >
-      Check Availability
-      </button>
     </div>
   </div>
 </template>
@@ -93,7 +94,7 @@ p {
 }
 .booking-container {
   height: 35vh;
-  width: 145%;
+  width: 920px;
   background-color: #82724a;
   border-radius: 1.5rem;
   border: 5px solid #eaa654;
@@ -101,7 +102,7 @@ p {
   padding: 0 25px 10px 25px;
 }
 .user-welcome {
-  text-align: left;
+  text-align: center;
 }
 .calendar {
   font-size: 18px;
@@ -110,6 +111,8 @@ p {
 .date-room-type {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .dropdown-container {
   display: flex;

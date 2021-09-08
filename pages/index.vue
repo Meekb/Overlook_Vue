@@ -37,7 +37,7 @@
             @rooms-avail="displayAvailRooms" 
           />
           <search-results 
-            v-if="this.search" 
+            :search="this.search" 
             :availability="this.availability" 
           />
         </div>
@@ -179,7 +179,6 @@ export default {
     },
     displayAvailRooms(payload) {
       this.availability = payload.availability
-      console.log(this.availability)
       this.search = payload.search
     }
   }
@@ -194,6 +193,7 @@ export default {
   display: flex;
   flex-direction: column;
   background-color: #c1ac93;
+  color: black;
   height: 98vh;
   margin: 0;
   padding: 0;
@@ -221,10 +221,10 @@ export default {
   flex-direction: column;
 }
 .content-container {
-  margin-left: 45px;
+  margin-left: 40px;
 }
 .sidebar-container {
-  width: 35%;
+  width: 325px;
   height: 74vh;
   overflow: scroll;
   text-align: center;
@@ -239,5 +239,4 @@ img {
   margin-left: 55px;
   margin-top: 3 5px;
 }
-
 </style>

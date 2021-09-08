@@ -93,4 +93,7 @@ label {
 .password {
   margin-top: 15px;
 }
+p {
+  color: black;
+}
 </style>

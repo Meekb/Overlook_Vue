@@ -40,7 +40,7 @@
         </div>
       </div>
       <div v-if="!historyDisplayed">
-        <img class="sidebar-image" src="../static/overlook-skypool.png" width="245px"/>
+        <img class="sidebar-image" src="../static/overlook-skypool.png" width="275px"/>
       </div>
     </aside>
   </section>
