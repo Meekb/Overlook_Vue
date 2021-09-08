@@ -65,8 +65,8 @@ export default {
     },
     checkAvailability () {
       this.$emit('search-date', this.checkinDate)
-      this.availRooms = []
-      this.queryMatch = []
+      this.availRooms = [] // resets from any prev query results
+      this.queryMatch = [] // resets from any prev query results
       this.searching = true
       this.checkinDate = this.formatCheckin()
       const bookedRooms = this.bookings.filter(bk => bk.date === this.checkinDate)
