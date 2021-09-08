@@ -28,7 +28,7 @@ $ npm run dev
     * Bookings are for the year 2020  
     * No error handling for past check-in dates which currently allows for POSTs in 2020
   * GET and POST implemented with Axios
-  * Application will be completed using Cypress - **UNDER CONSTRUCTION**
+  * Application testing will be completed using Cypress - **UNDER CONSTRUCTION**
 
 ## Walkthrough
 
