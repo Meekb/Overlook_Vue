@@ -219,7 +219,7 @@ export default {
   flex-direction: column;
 }
 .content-container {
-  margin-left: 55px;
+  margin-left: 45px;
 }
 .sidebar-container {
   width: 35%;

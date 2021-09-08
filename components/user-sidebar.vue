@@ -40,7 +40,7 @@
         </div>
       </div>
       <div v-if="!historyDisplayed">
-        <img class="sidebar-image" src="../static/overlook-skypool.png" width="250px"/>
+        <img class="sidebar-image" src="../static/overlook-skypool.png" width="245px"/>
       </div>
     </aside>
   </section>
@@ -52,7 +52,7 @@ export default {
   props: [ 'name', 'userHistory', 'userTotal' ],
   data () {
     return {
-      historyDisplayed: true,
+      historyDisplayed: false,
     }
   },
   methods: {

@@ -91,8 +91,13 @@ p {
   font-size: 18px;
 }
 .booking-container {
-  height: 40vh;
-  background-color: bisque;
+  height: 35vh;
+  width: 151%;
+  background-color: #82724a;
+  border-radius: 1.5rem;
+  border: 5px solid #eaa654;
+  margin-bottom: 15px;
+  padding: 0 25px 10px 25px;
 }
 .user-welcome {
   text-align: left;
