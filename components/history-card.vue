@@ -22,7 +22,6 @@ export default {
 }
 </script>
 
-
 <style>
 .card-container {
   display: flex;
