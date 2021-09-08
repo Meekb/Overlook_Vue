@@ -9,6 +9,7 @@
       class="cards-container" :key="i" 
     >
       <result-card
+        @new-booking="sendReservation"
         :type="item.roomType" 
         :number="item.number" 
         :bidet="item.bidet" 
@@ -33,10 +34,15 @@ export default {
   data() {
     return {
       queryInfo: this.queryMatch,
+      newReservation: undefined,
     }
   },
   methods: {
-
+    sendReservation(payload) {
+      this.newReservation = payload.newBooking
+      const newReservation = this.newReservation
+      this.$emit('new-reservation', {newReservation})
+    }
   }
 }
 </script>

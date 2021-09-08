@@ -6,7 +6,9 @@
       <p v-if="this.numBeds > 1">{{ this.numBeds }} {{ this.bedSize }} beds</p>
       <p v-if="bidet">This room has a bidet!</p>
       <p>${{ this.cost }}</p>
-      <button class="book-btn">Book Room #{{ this.number }}</button>
+      <button class="book-btn" @click="this.formatAndSubmitBooking">
+        Book Room #{{ this.number }}
+      </button>
     </div>
 </template>
 
@@ -15,7 +17,8 @@ export default {
   props: [ 'bedSize', 'bidet', 'cost', 'date', 'number', 'numBeds', 'type' ],
   methods: {
     formatAndSubmitBooking() {
-      const newBooking = {}
+      const newBooking = {roomNumber: this.number}
+      this.$emit('new-booking', {newBooking})
     },
   }
 }

@@ -34,12 +34,26 @@
             :user="this.user" 
             :bookings="this.allBookings" 
             :rooms="this.allRooms"
-            @rooms-avail="displayAvailRooms" 
+            @rooms-avail="displayAvailRooms"
+            @search-date="setSearchDate" 
           />
-          <search-results 
+          <search-results
+            v-show="!this.reservation"
+            @new-reservation="bookRoom" 
             :search="this.search" 
             :availability="this.availability" 
           />
+        </div>
+        <div v-if="this.reservation" class="confirmation-container">
+          <p class="booking-confirmation">
+            Success! You've booked Room# {{ reservation.roomNumber }} for the night of {{ reservation.date }}
+          </p>
+          <p class="booking-confirmation">
+            Confirmation# {{ reservation.confirmation }}.
+          </p>
+          <p class="booking-confirmation">
+            Please retain for your records.
+          </p>
         </div>
       </div>
       </div>
@@ -77,6 +91,8 @@ export default {
       allRooms: undefined,
       availability: undefined,
       search: false,
+      searchdate: undefined,
+      reservation: undefined,
     }
   },
   methods: {
@@ -141,8 +157,7 @@ export default {
         }
         if (rm.roomType === 'suite') {
           rm.roomType = 'Suite'
-        }
-        // rm.costPerNight = rm.costPerNight.toFixed(2)  
+        } 
       })
       return formattedRooms
     },
@@ -180,6 +195,20 @@ export default {
     displayAvailRooms(payload) {
       this.availability = payload.availability
       this.search = payload.search
+    },
+    async bookRoom(payload) {
+      const newReservation = payload.newReservation
+      newReservation.userID = this.user.id
+      newReservation.date = this.searchDate
+      const confirmed = await this.$axios.$post('http://localhost:3001/api/v1/bookings', newReservation)
+      newReservation.confirmation = confirmed.newBooking.id
+      this.reservation = newReservation
+      console.log('this.reservation', this.reservation)
+    },
+    setSearchDate(payload) {
+      this.searchDate = payload
+      this.searchDate = this.searchDate.split('-').join('/')
+      return this.searchDate
     }
   }
 }
@@ -232,6 +261,19 @@ export default {
   border: 4px solid #eaa654;
   border-radius: 1.5rem;
   margin-left: 25px;
+}
+.confirmation-container {
+  height: 27.5vh;
+  text-align: center;
+  background-color: #82724a;
+  padding: 25px;
+  width: 920px;
+  border-radius: 1.5rem;
+  border: 5px solid #eaa654;
+}
+.booking-confirmation {
+  font-size: 25px;
+  font-weight: bold;
 }
 img {
   border-radius: 1.5rem;

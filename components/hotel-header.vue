@@ -4,8 +4,6 @@
     <button v-if="this.isValidated" @click="this.logoutUser" class="logout-btn">Logout</button>
       <h1 class="overlook">Overlook Hotel</h1>
       <h2 class="overlook">Exclusive! Luxurious! Life-changing. . .</h2>
-      <!-- <div class="logout"> -->
-      <!-- </div> -->
     </header>
   </div>
 </template>

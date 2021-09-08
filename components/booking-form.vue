@@ -64,6 +64,7 @@ export default {
       return formattedCheckin
     },
     checkAvailability () {
+      this.$emit('search-date', this.checkinDate)
       this.availRooms = []   // reset this.availRooms to clear any prev results
       this.queryMatch = []   // reset this.queryMatch to clear any prev results
       this.searching = true
