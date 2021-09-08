@@ -39,6 +39,9 @@
           />
         </div>
       </div>
+      <div v-if="!historyDisplayed">
+        <img class="sidebar-image" src="../static/overlook-skypool.png" width="250px"/>
+      </div>
     </aside>
   </section>
 </template>
@@ -62,6 +65,11 @@ export default {
 </script>
 
 <style>
+.sidebar-image {
+  border-radius: 1.5rem;
+  border: 5px solid #eaa654;
+  margin-left: 0px;
+}
 .your-history {
   font-size: 25px;
 }

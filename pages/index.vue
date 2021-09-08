@@ -193,7 +193,7 @@ export default {
   display: flex;
   flex-direction: column;
   background-color: bisque;
-  height: 95vh;
+  height: 98vh;
   margin: 0;
   padding: 0;
 }
@@ -222,8 +222,8 @@ export default {
   margin-left: 55px;
 }
 .sidebar-container {
-  width: 85%;
-  height: 76vh;
+  width: 35%;
+  height: 74vh;
   overflow: scroll;
   text-align: center;
   background-color: #82724a;

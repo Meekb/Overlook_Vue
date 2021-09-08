@@ -41,7 +41,7 @@ export default {
   overflow: scroll;
   background-color: #82724a;
   padding: 25px;
-  width: 185%;
+  width: 151%;
   border-radius: 1rem;
 }
 </style>
