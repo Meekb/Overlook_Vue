@@ -35,7 +35,7 @@ $ npm run dev
 Providing an incorrect username or password will throw an error for the user then clear the input fields for re-entry
 ![overlook-login](https://user-images.githubusercontent.com/76264735/132587112-3c6df0dc-fcee-4acb-a649-726d4306d11f.gif)
 
-Once successfully logged in, the user can view their history with Overlook Hotel including the total dollars they've spent 
+Once successfully logged in, the user can view their history with Overlook Hotel including the total dollars they've spent. 
 Wow, that's a lot of money! This hotel must be REALLY popular
 ![overlook-history](https://user-images.githubusercontent.com/76264735/132587356-a83bc8e0-87a1-4177-ad3e-de072501783b.gif)
 
