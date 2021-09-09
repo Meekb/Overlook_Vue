@@ -42,7 +42,7 @@ export default {
       this.newReservation = payload.newBooking
       const newReservation = this.newReservation
       this.$emit('new-reservation', {newReservation})
-    }
+    }, 
   }
 }
 </script>

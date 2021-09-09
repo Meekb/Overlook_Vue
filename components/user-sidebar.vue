@@ -4,9 +4,9 @@
       <p class="your-history">
         Your History at Overlook
       </p>
-      <h4 v-if="historyDisplayed">
+      <!-- <h4 v-if="historyDisplayed">
         Total spent at Overlook: ${{ userTotal }}
-      </h4>
+      </h4> -->
       <button 
         v-if="!historyDisplayed" 
         @click.prevent="toggleUserHistory" 
@@ -22,6 +22,9 @@
         Hide History
       </button>
       <div v-if="historyDisplayed">
+        <p class="total-spent">
+        Total spent at Overlook: ${{ userTotal }}
+        </p>
         <div 
           v-for="(item, index) in this.userHistory" 
           :key="index" 
@@ -70,13 +73,18 @@ export default {
   border: 5px solid #eaa654;
   margin-left: 0;
 }
+.total-spent {
+  font-size: 20px;
+  font-weight: bold;
+}
 .your-history {
   font-size: 25px;
 }
 .user-history-btn {
   font-size: 18px;
+  font-weight: bold;
   border-radius: 1rem;
-  margin-top: 10px;
-  margin-bottom: 25px;
+  /* margin-top: 35px; */
+  margin-bottom: 55px;
 }
 </style>

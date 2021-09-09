@@ -54,6 +54,7 @@
           <p class="booking-confirmation">
             Please retain for your records.
           </p>
+          <button @click="updateAndClear" class="done-btn">Done</button>
         </div>
       </div>
       </div>
@@ -209,7 +210,15 @@ export default {
       this.searchDate = payload
       this.searchDate = this.searchDate.split('-').join('/')
       return this.searchDate
-    }
+    },
+    updateAndClear() {
+      // this method needs to clear data from other components --- booking form
+      this.availability = undefined
+      this.search = false
+      this.searchDate = undefined
+      this.reservation = undefined
+      this.asyncData()
+    },
   }
 }
 </script>
@@ -274,6 +283,11 @@ export default {
 .booking-confirmation {
   font-size: 25px;
   font-weight: bold;
+}
+.done-btn {
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 1rem;
 }
 img {
   border-radius: 1.5rem;

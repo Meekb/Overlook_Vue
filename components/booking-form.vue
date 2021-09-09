@@ -132,6 +132,7 @@ p {
 }
 .check-btn {
   font-size: 18px;
+  font-weight: bold;
   border-radius: 1rem;
 }
 </style>
