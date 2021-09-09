@@ -212,7 +212,7 @@ export default {
       return this.searchDate
     },
     updateAndClear() {
-      // this method needs to clear data from other components --- booking form
+      // this method needs to trigger other components -booking form- to clear data
       this.availability = undefined
       this.search = false
       this.searchDate = undefined
